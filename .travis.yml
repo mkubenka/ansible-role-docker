@@ -20,6 +20,4 @@ script:
   - KITCHEN_LOCAL_YAML=.kitchen.ci.yml bundle exec kitchen test ${INSTANCE}
 
 notifications:
-  webhooks:
-    - https://galaxy.ansible.com/api/v1/notifications/
-    - http://requestb.in/1bmz9lw1
+  webhooks: https://galaxy.ansible.com/api/v1/notifications/
