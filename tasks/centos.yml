@@ -1,0 +1,16 @@
+---
+
+- name: copy repository definition
+  template:
+    src=docker.repo.j2
+    dest="/etc/yum.repos.d/docker-{{ docker_repo }}.repo"
+    backup=yes
+
+- name: create the GPG key
+  rpm_key: state=present key=https://yum.dockerproject.org/gpg
+
+- name: install packages
+  yum: pkg={{ item }} state=present
+  with_items:
+    - docker-engine
+    - python-docker-py

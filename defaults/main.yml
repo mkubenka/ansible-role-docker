@@ -1,0 +1,4 @@
+---
+
+# Available repos: main, testing, experimental
+docker_repo: 'main'

@@ -1,0 +1,13 @@
+---
+
+- include: centos.yml
+  when: ansible_distribution == 'CentOS'
+
+- include: amazon.yml
+  when: ansible_distribution == 'Amazon'
+
+- name: create docker group
+  group: name=docker state=present
+
+- name: start and enable the docker
+  service: name=docker state=started enabled=true
