@@ -16,6 +16,10 @@ them are as follows. (For all variables, take a look at [defaults/main.yml](defa
 # Available repos: main, testing, experimental
 docker_repo: 'main'
 
+# Set configuration option for the daemon. https://docs.docker.com/engine/reference/commandline/dockerd/#linux-configuration-file
+docker_daemon_options: 
+  dns: 8.8.8.8
+
 ```
 
 ## Dependencies

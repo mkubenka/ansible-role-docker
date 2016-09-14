@@ -2,6 +2,11 @@
 
 - hosts: all
 
+  vars:
+    docker_daemon_options:
+      dns:
+        - 8.8.8.8
+
   pre_tasks:
     - name: do not requires a TTY when using sudo
       copy:

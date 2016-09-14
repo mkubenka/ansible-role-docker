@@ -2,3 +2,5 @@
 
 # Available repos: main, testing, experimental
 docker_repo: 'main'
+
+docker_daemon_options: {}

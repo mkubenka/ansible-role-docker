@@ -9,5 +9,17 @@
 - name: create docker group
   group: name=docker state=present
 
+- name: create etc docker directory
+  file:
+    path=/etc/docker
+    mode=0700
+    state=directory
+
+- name: setup daemon options
+  template:
+    src=daemon.json.j2
+    dest=/etc/docker/daemon.json
+    backup=yes
+
 - name: start and enable the docker
   service: name=docker state=started enabled=true
